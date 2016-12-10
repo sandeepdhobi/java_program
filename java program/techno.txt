@@ -1,0 +1,237 @@
+1]treehouse.com
+2]
+class classname
+{
+void sandeep()
+{
+System.out.println("this is multiple class program");
+}
+}\\not show output as java start executing with main method;
+\\in other class 
+
+
+class linkingclass{
+public static void main(String args[]){
+//1st create object of class which is executing like scanner
+classname classnameobj=new classname();//take important
+classnameobj.sandeep();//as it get psvm from this class-----accessing method of  class classname
+}
+}
+//output
+this is multiple class program
+
+3]
+declaring string 
+String stringname;
+
+
+
+
+class classname
+{
+void sandeep(String name)
+{
+System.out.println("my name is"+name);
+}
+}
+
+
+class linkingclass{
+public static void main(String args[]){
+Scanner sc=new Scanner(System.in);
+classname classnameobj=new classname();
+System.out.println("enter your name");
+String name=sc.nextLine();
+classnameobj.sandeep(name);
+}
+}
+//output
+enter your name
+my name is sandeep
+
+
+4]MULTIPLE METHOD IN SAME CLASS
+
+
+class classname
+{
+private String girlname;// it says this variable can be used only inside this class metod
+public void setname(String name)
+{
+girlname=name;
+}
+public String getname()//return string
+{
+return girlname;
+}
+public void saying()
+{
+System.out.printf("your first gf was %s",getname());//see carefully this is whole c language;
+}
+}
+
+
+
+class linkingclass{
+public static void main(String args[]){
+Scanner sc=new Scanner(System.in);
+classname classnameobj=new classname();
+System.out.println("enter your name");
+System.out.println("enter your first gf name");
+String tmp=sc.nextLine();
+classnameobj.setname(tmp);
+classnameobj.saying();//once see without it
+}
+}
+//output
+enter your name
+culsy
+your first gf name was culsy
+
+5]CONSTRUCTER
+
+
+class classname
+{
+private String girlname;// it says this variable can be used only inside this class metod
+public classname(String name)//-------constructer   ----without this o/p my first gf name was null
+{
+girlname=name;
+}
+public void setname(String name)
+{
+girlname=name;
+}
+public String getname()//return string
+{
+return girlname;
+}
+public void saying()
+{
+System.out.printf("your first gf was %s",getname());//see carefully this is whole c language;
+}
+}
+
+
+
+class linkingclass{
+public static void main(String args[]){
+classname classnameobj=new classname("kelsy");
+classname classnameobj2=new classname("nicole");//---advantage ---no need to writ whole thing again and again
+classnameobj.saying();//once see without it
+classnameobj2.saying();
+}
+}
+//output
+enter your name
+culsy
+your first gf name was culsy
+
+
+
+
+
+
+6]conditional operator
+
+
+import java.util.*;
+  class conoprtr
+{
+public static void main(String args[])
+{
+Scanner sc=new Scanner(System.in);
+int age=sc.nextInt();
+System.out.println(age>50?"senier citizen";"not a senier citizen");
+}
+}
+
+
+7]
+class mathclass{
+public static void main(String args[])
+{
+Sysytem.out.println(math.abs(-26.7));//ceil(7.4)=8----floor(7.8)=7-----max(8.2,5.6)-----min(8.2,5.6)--pow(5,3)---sqrt(55)
+}
+}
+
+
+
+
+8]RANDOM NUMBER GENERATOR
+import java.util.random;
+class sandeep
+{
+public static void main(String args())
+{
+random dice=new random();///object of random class created like scanner
+int number=dice.nextInt(6);///6 says that 6 values i.e number from 0 to 5
+System.out.println(number+"  ");
+}
+}
+
+
+
+9]ENHANCED FOR LOOP
+class enhanced
+{
+public static void main(System.in)
+{
+int bucky[]={25,35,65,85};
+int total;
+for(int x:bucky)
+{
+total+=x;
+}
+System.out.println("total is"+total);
+}
+}
+
+
+
+10]
+vriable length argument
+
+
+class apple
+{
+public static void main(String args[])
+{
+System.out.println(average(43,56,85,98,78));
+}
+public static int average(int...numbers);//if we dont know no of argument in method
+{
+int total =0;
+for(int x:numbers)
+total+=x;
+return total/numbers.length;
+}
+}
+
+11]
+public class time//access by other class also
+{
+private int hour;//can not be access by any class ie like san=====but if public then can be access by by other class i.e san
+private int minute;
+private int second;
+public void settime(int h,int m,int s)
+{
+hour=((h>=0 && h<24)? h : 0);
+minute=((m>=0 && m<60)? m : 0);
+second=((s>=0 && s<60)? s : 0);
+}
+public String tominitory()
+{
+return String.format("%02d:%02d:%02d",hour,minute,second);
+}
+}
+
+class san
+{
+public static void main(String args[])
+{
+time s=new time();
+System.out.println(s.tominitory());
+}
+}
+
