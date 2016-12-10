@@ -1,0 +1,3 @@
+  import java.applet.Applet;   import java.awt.*;             
+     /*   <applet CODE="ImageDemo.class" WIDTH=400 HEIGHT=600>   </applet>  */  public class ImageDemo extends Applet   {   Image i;     public void init()   //  initialising the appet   {  // getImage is a method ie returns an image objec   // getCodeBase() gets the base URL  // "j2ee1_4.gif" name of image on the same directory  
+  i=getImage(getCodeBase(),"j2ee1_4.gif");     }  public void paint(Graphics g)  // method of paint   {  g.drawImage(i,50,50,this);  // used to display an image }}

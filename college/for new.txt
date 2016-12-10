@@ -1,0 +1,8 @@
+import java.awt.*;
+import java.applet.*;
+public class bar extends Applet
+{
+int n=0;
+String lb[];
+int val[];
+public void
